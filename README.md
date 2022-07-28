@@ -1,8 +1,10 @@
 # Bforartists Flatpak
 
-## Bforartists
-Website: https://www.bforartists.de/
-Source: https://github.com/Bforartists/Bforartists/
+#### Website
+https://www.bforartists.de/
+
+#### Source
+https://github.com/Bforartists/Bforartists/
 
 ## Building this Flatpak
 
