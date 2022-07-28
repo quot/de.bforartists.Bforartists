@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
     <id>de.bforartists.Bforartists</id>
-    <launchable type="desktop-id">de.bforartists.Bforartists.desktop</launchable>
+    <launchable type="desktop-id">de.bforartists.bforartists.desktop</launchable>
     <name>Bforartists</name>
-    <summary>Free and open source 3D creation suite</summary>
+    <summary>Bforartists is a fork of the popular 3D software Blender, with the goal to improve the UI.</summary>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0</project_license>
     <description>
@@ -62,6 +62,6 @@
                     Blender 3.2.1
                 </p>
             </description>
-        <release>
+        </release>
     </releases>
 </component>
