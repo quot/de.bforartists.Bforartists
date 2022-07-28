@@ -1,9 +1,9 @@
 {
-    "id": "org.blender.Blender",
+    "id": "de.bforartists.Bforartists",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "21.08",
     "sdk": "org.freedesktop.Sdk",
-    "command": "blender",
+    "command": "bforartists",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -129,52 +129,46 @@
             ]
         },
         {
-            "name": "blender",
+            "name": "bforartists",
             "buildsystem": "simple",
             "build-commands": [
-                "install -Dm755 blender.sh /app/bin/blender",
-                "mv blender /app/blender",
-                "install -Dm644 /app/blender/blender.desktop /app/share/applications/$FLATPAK_ID.desktop",
+                "install -Dm755 bforartists.sh /app/bin/bforartists",
+                "mv bforartists /app/bforartists",
+                "install -Dm644 /app/bforartists/bforartists.desktop /app/share/applications/$FLATPAK_ID.desktop",
                 "desktop-file-edit --set-icon=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop",
-                "install -Dm644 /app/blender/blender.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg",
-                "install -Dm644 /app/blender/blender-symbolic.svg /app/share/icons/hicolor/symbolic/apps/$FLATPAK_ID-symbolic.svg",
-                "cd /app/blender/*.*/datafiles && mv locale /app/share/locale && ln -sf /app/share/locale locale",
+                "install -Dm644 /app/bforartists/bforartists.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg",
+                "install -Dm644 /app/bforartists/bforartists-symbolic.svg /app/share/icons/hicolor/symbolic/apps/$FLATPAK_ID-symbolic.svg",
+                "cd /app/bforartists/*.*/datafiles && mv locale /app/share/locale && ln -sf /app/share/locale locale",
                 "install -Dm644 $FLATPAK_ID.appdata.xml /app/share/metainfo/$FLATPAK_ID.metainfo.xml"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.2/blender-3.2.1-linux-x64.tar.xz",
-                    "sha256": "d363a836d03a2462341d7f5cac98be2024120e648258f9ae8e7b69c9f88d6ac1",
-                    "strip-components": 0,
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 201,
-                        "stable-only": true,
-                        "url-template": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender$major.$minor/blender-$version-linux-x64.tar.xz"
-                    }
+                    "url": "https://github.com/Bforartists/Bforartists/releases/download/v3.2.1/Bforartists-3.2.1-Linux.tar.xz",
+                    "sha256": "140dafba93bcdbd7dce0ff702c4795a53bd3888d8f3e1c3ff30e343e91e4fb36",
+                    "strip-components": 0
                 },
                 {
                     "type": "shell",
                     "commands": [
-                        "mv blender*linux* blender"
+                        "mv Bforartists*Linux/usr/bin bforartists"
                     ]
                 },
                 {
                     "type": "file",
-                    "path": "org.blender.Blender.appdata.xml"
+                    "path": "de.bforartists.Bforartists.appdata.xml"
                 },
                 {
                     "type": "patch",
-                    "path": "blender-desktop-add-wm-class.patch"
+                    "path": "bforartists-desktop-add-wm-class.patch"
                 },
                 {
                     "type": "script",
                     "commands": [
-                        "cd /app/blender",
-                        "exec ./blender \"$@\""
+                        "cd /app/bforartists",
+                        "exec ./bforartists \"$@\""
                     ],
-                    "dest-filename": "blender.sh"
+                    "dest-filename": "bforartists.sh"
                 }
             ]
         }
