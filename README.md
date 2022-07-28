@@ -23,7 +23,7 @@ flatpak run de.bforartists.Bforartists
 flatpak uninstall de.bforartists.Bforartists
 ```
 
-## Updating BforArtists Version
+## Updating Bforartists Version
 
 ### de.bforartists.Bforartists.json
 - Update the Bforartists archive URL and SHA under `modules`->`bforartists`->`sources`.
